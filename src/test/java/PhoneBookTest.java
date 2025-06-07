@@ -33,4 +33,24 @@ public class PhoneBookTest {
         String name = phoneBook.findByNumber("999"); // несуществующий номер
         assertNull(name);
     }
+
+    @Test
+    public void testFindByNameExisting() {
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("AHHA", "1234567890");
+
+        String result = phoneBook.findByName("AHHA");
+
+        assertEquals("1234567890", result);
+    }
+
+    @Test
+    public void testFindByNameNonExisting() {
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("AHHA", "1234567890");
+
+        String result = phoneBook.findByName("BoBa");
+
+        assertNull(result);
+    }
 }
