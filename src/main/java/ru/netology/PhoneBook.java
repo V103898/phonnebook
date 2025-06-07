@@ -28,6 +28,6 @@ public class PhoneBook {
         return nameToNumber.size();
     }
         public List<String> printAllNames () {
-            return null;
+            return new ArrayList<>(sortedNames);
         }
     }
