@@ -12,14 +12,11 @@ public class PhoneBook {
     private final TreeSet<String> sortedNames = new TreeSet<>();
 
     public String findByNumber(String number) {
-        return null;
+        return numberToName.get(number);
     }
-
     public String findByName(String name) {
         return nameToNumber.get(name);
     }
-
-
 
     public int add(String name, String number) {
         if (!nameToNumber.containsKey(name)) {
