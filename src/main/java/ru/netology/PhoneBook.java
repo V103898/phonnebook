@@ -14,6 +14,7 @@ public class PhoneBook {
     public String findByNumber(String number) {
         return numberToName.get(number);
     }
+
     public String findByName(String name) {
         return nameToNumber.get(name);
     }
@@ -26,7 +27,7 @@ public class PhoneBook {
         }
         return nameToNumber.size();
     }
-
-
+        public List<String> printAllNames () {
+            return null;
+        }
     }
-

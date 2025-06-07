@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.Test;
 import ru.netology.PhoneBook;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 public class PhoneBookTest {
     @Test
@@ -52,5 +54,22 @@ public class PhoneBookTest {
         String result = phoneBook.findByName("BoBa");
 
         assertNull(result);
+    }
+    @Test
+    public void testPrintAllNamesReturnsSortedList() {
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("BoBa", "456");
+        phoneBook.add("AHHA", "123");
+        phoneBook.add("ApTyp", "789");
+
+        List<String> names = phoneBook.printAllNames();
+        assertEquals(List.of("AHHA", "ApTyp", "BoBa"), names);
+    }
+
+    @Test
+    public void testPrintAllNamesReturnsEmptyList() {
+        PhoneBook phoneBook = new PhoneBook();
+        List<String> names = phoneBook.printAllNames();
+        assertTrue(names.isEmpty());
     }
 }
