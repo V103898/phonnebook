@@ -17,4 +17,20 @@ public class PhoneBookTest {
         int count = phoneBook.add("AHHA", "456"); // дубликат имени
         assertEquals(1, count); // размер не должен измениться
     }
+
+    @Test
+    public void testFindByNumberExisting() {
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("AHHA", "123");
+        String name = phoneBook.findByNumber("123");
+        assertEquals("AHHA", name);
+    }
+
+    @Test
+    public void testFindByNumberNonExisting() {
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("AHHA", "123");
+        String name = phoneBook.findByNumber("999"); // несуществующий номер
+        assertNull(name);
+    }
 }
